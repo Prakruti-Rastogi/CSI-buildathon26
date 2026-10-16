@@ -1,3 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hastkala | Art Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">हस्तकला <span>HASTKALA</span></a>
+    <a class="back-button" href="index.html">← Back to Categories</a>
+  </header>
+
+  <main>
+    <section class="gallery-heading">
+      <p class="eyebrow">HANDMADE WITH LOVE · ROOTED IN INDIA</p>
+      <div class="ornament">✦ ───────── ❋ ───────── ✦</div>
+      <h1 id="category-title">Discover Indian Art</h1>
+      <p id="category-description">
+        Explore beautiful creations made by talented artisans.
+      </p>
+      <div class="ornament bottom-ornament">❋ ✦ ❋</div>
+    </section>
+
+    <section class="gallery-content">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search artworks or artist names..."
+          aria-label="Search artworks or artist names"
+        >
+      </label>
+
+      <div class="results-row">
+        <p id="results-count">Discover unique creations</p>
+        <label>
+          <span class="visually-hidden">Sort artwork</span>
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Artwork Name</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="artwork-grid" class="artwork-grid"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span>❋</span>
+        <h2>No artworks found</h2>
+        <p>Try another search or explore a different keyword.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ for India's artisans · Hastkala</p>
+  </footer>
+
+  <dialog id="buy-dialog" class="buy-dialog">
+    <button id="close-dialog" class="close-dialog" aria-label="Close">×</button>
+    <p class="eyebrow">A TREASURE FROM HASTKALA</p>
+    <h2>Interested in this artwork?</h2>
+    <p id="buy-message"></p>
+    <p class="demo-note">
+      This is a demo purchase. No payment will be taken.
+    </p>
+    <button id="confirm-buy" class="buy-button">Confirm Interest</button>
+  </dialog>
+</body>
+</html>
 <div class="artists-option-row">
   <button
     type="button"
