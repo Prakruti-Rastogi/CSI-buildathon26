@@ -1,0 +1,21 @@
+border: 1px solid #e0cdb8;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 8px 22px #35101820;
+}
+
+.artists-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 6px;
+  text-align: left;
+  background: white;
+  color: #541622;
+  cursor: pointer;
+}
+
+.artists-menu button:hover {
+  background: #f5eadb;
+}
