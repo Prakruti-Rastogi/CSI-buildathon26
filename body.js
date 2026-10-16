@@ -5,7 +5,7 @@ const crafts = [
     secondLine: "Endless stories.",
     description:
       "Shaped by skilled hands, every curve carries the warmth of the earth.",
-    image: "images/pottery.jpg",
+    image: "images/pottery.png",
     shape: "pottery",
     button: "Explore Pottery",
     alt: "Handcrafted Indian pottery",
@@ -16,7 +16,7 @@ const crafts = [
     secondLine: "flow.",
     description:
       "Woven threads and printed patterns fall into a living work of art.",
-    image: "images/textiles.jpg",
+    image: "images/blockprint.png",
     shape: "textile",
     button: "Explore Textiles",
     alt: "Traditional Indian textile drape",
@@ -27,7 +27,7 @@ const crafts = [
     secondLine: "every stroke.",
     description:
       "Vibrant colours and intricate folk-art patterns preserve generations of Indian storytelling.",
-    image: "images/krishna-radha-folk-art.jpg",
+    image: "images/painting.png",
     shape: "painting",
     button: "Explore Paintings",
     alt: "Krishna and Radha Indian folk-art painting",
@@ -38,7 +38,7 @@ const crafts = [
     secondLine: "shine.",
     description:
       "Intricate details and traditional craftsmanship turn every piece into a keepsake.",
-    image: "images/jewellery.jpg",
+    image: "images/jewellery.png",
     shape: "jewellery",
     button: "Explore Jewellery",
     alt: "Traditional Indian jewellery",
