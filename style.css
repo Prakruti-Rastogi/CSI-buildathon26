@@ -1,3 +1,4 @@
+
 :root {
   --maroon: #42151e;
   --maroon-dark: #310d15;
@@ -205,56 +206,17 @@ a:focus-visible {
   filter: drop-shadow(0 20px 24px #18070a55);
 }
 
-/* TEXTILE: DIAGONAL BRUSH STROKES PAINTED ONTO THE PAGE */
+/* TEXTILE: PAINTED ON WITH BRUSH STROKES (drawn by body.js) */
 
-/* --front: how far the paint has travelled across the picture */
-@property --front {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 0%;
-}
-
-/* --thick: how thick each diagonal stroke is (70px = no gaps left) */
-@property --thick {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 40px;
+.artwork canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 20px 24px #18070a55);
 }
 
 .artwork.textile {
   overflow: hidden;
-}
-
-.artwork.textile img {
-  /* Layer 1: a soft front edge that travels across the picture */
-  /* Layer 2: diagonal stripes (the strokes), repeating every 70px */
-  -webkit-mask-image:
-    linear-gradient(100deg, #000 calc(var(--front) - 22%), transparent var(--front)),
-    repeating-linear-gradient(45deg, #000 0, #000 var(--thick), transparent var(--thick), transparent 70px);
-  mask-image:
-    linear-gradient(100deg, #000 calc(var(--front) - 22%), transparent var(--front)),
-    repeating-linear-gradient(45deg, #000 0, #000 var(--thick), transparent var(--thick), transparent 70px);
-
-  /* only show the parts where BOTH layers are solid */
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-
-  animation:
-    paint-travel 1.4s ease-in-out both,
-    paint-fill .6s ease-in-out 1s both;
-}
-
-/* the strokes travel across the picture... */
-@keyframes paint-travel {
-  to { --front: 150%; }
-}
-
-/* ...then thicken until the gaps between them are filled in */
-@keyframes paint-fill {
-  to { --thick: 76px; }
 }
 
 /* PAINTING: BRUSHSTROKE REVEAL */
@@ -596,11 +558,8 @@ footer {
     scroll-behavior: auto !important;
   }
 
-  .artwork.textile img,
   .artwork.painting img {
     clip-path: none;
-    mask-image: none;
-    -webkit-mask-image: none;
   }
 }
 
