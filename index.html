@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RangManch- A stage for Art</title>
+
+    <style>
+        /* 1. Basic page styling */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f5ef;
+            color: #26251f;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* 2. Navigation bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 7%;
+            border-bottom: 1px solid #ded9cf;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: #9a4f32;
+        }
+
+        /* 3. Hero section */
+        .hero {
+            padding: 90px 7% 75px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            color: #865b43;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            font-weight: normal;
+            line-height: 1.1;
+            max-width: 850px;
+            margin: 22px auto;
+        }
+
+        .hero p {
+            max-width: 560px;
+            margin: 0 auto 30px;
+            line-height: 1.8;
+            color: #666057;
+        }
+
+        .button {
+            display: inline-block;
+            background: #292820;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 3px;
+        }
+
+        .button:hover {
+            background: #8b4b32;
+        }
+
+        /* 4. Featured artwork gallery */
+        .gallery {
+            padding: 45px 7% 90px;
+            scroll-margin-top: 20px;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            font-weight: normal;
+            margin: 10px 0 0;
+        }
+
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .artwork img {
+            display: block;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            background: #e7dfd2;
+        }
+
+        .artwork h3 {
+            margin: 17px 0 6px;
+            font-size: 21px;
+            font-weight: normal;
+        }
+
+        .artwork p {
+            margin: 0;
+            color: #746d63;
+            font-size: 14px;
+        }
+
+        /* 5. Community section */
+        .community {
+            background: #e9e2d6;
+            text-align: center;
+            padding: 75px 7%;
+            scroll-margin-top: 20px;
+        }
+
+        .community h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin: 15px 0;
+        }
+
+        .community p {
+            max-width: 550px;
+            margin: 0 auto 28px;
+            line-height: 1.8;
+            color: #5f594f;
+        }
+
+        /* 6. Footer */
+        footer {
+            padding: 25px 7%;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 13px;
+            color: #746d63;
+        }
+
+        /* 7. Adapt the layout for smaller screens */
+        @media (max-width: 700px) {
+            nav {
+                padding: 18px 5%;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                flex-wrap: wrap;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 65px 5%;
+            }
+
+            .gallery {
+                padding: 35px 5% 60px;
+            }
+
+            .artwork-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .artwork img {
+                height: 300px;
+            }
+
+            .section-heading h2,
+            .community h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">RangManch.</a>
+
+        <div class="nav-links">
+            <a href="#gallery">Explore</a>
+            <a href="#community">Community</a>
+            <a href="#gallery">Artists</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <span class="eyebrow">A museum without walls</span>
+
+            <h1>Every artwork has a story waiting to be discovered.</h1>
+
+            <p>
+                Step into a world of imagination, explore original creations,
+                and discover the stories and people behind the art.
+            </p>
+
+            <a href="#gallery" class="button">Explore the collection →</a>
+        </section>
+
+        <!-- Artwork collection -->
+        <section class="gallery" id="gallery">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">Curated for you</span>
+                    <h2>Featured artworks</h2>
+                </div>
+
+                <a href="#community">Discover more →</a>
+            </div>
+
+            <div class="artwork-grid">
+                <article class="artwork">
+                    <img
+                        src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?auto=format&fit=crop&w=800&q=80"
+                        alt="Colorful abstract painting"
+                    >
+                    <h3>Fragments of Feeling</h3>
+                    <p>By Aanya Sharma · Abstract Art</p>
+                </article>
+
+                <article class="artwork">
+                    <img
+                        src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80"
+                        alt="Painting displayed in an art gallery"
+                    >
+                    <h3>Quiet Conversations</h3>
+                    <p>By Rohan Mehta · Contemporary Art</p>
+                </article>
+
+                <article class="artwork">
+                    <img
+                        src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=800&q=80"
+                        alt="Colorful contemporary artwork"
+                    >
+                    <h3>Beyond the Ordinary</h3>
+                    <p>By Mira Kapoor · Modern Art</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Community -->
+        <section class="community" id="community">
+            <span class="eyebrow">Art brings us together</span>
+
+            <h2>Look closer. Think deeper. Share your perspective.</h2>
+
+            <p>
+                Art is more than what we see. Share your interpretation,
+                exchange thoughtful feedback, and discover how others
+                experience the same artwork.
+            </p>
+
+            <a href="#gallery" class="button">Explore and discuss</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <span>RangManch- A stage for art</span>
+        <span>Created for artists, collectors, and curious minds.</span>
+    </footer>
+
+</body>
+</html>
