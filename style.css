@@ -187,6 +187,7 @@ a:focus-visible {
 /* ARTWORK */
 
 .artwork {
+  cursor: pointer;
   position: absolute;
   z-index: 1;
   top: 4%;
