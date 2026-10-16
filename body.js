@@ -307,6 +307,11 @@ function brushStrokes(canvas, source, craft, run, ratio) {
   paintFrame = requestAnimationFrame(frame);
 }
 
+// Go to the gallery page, e.g. gallery.html?category=pottery
+function openGallery(craft) {
+  window.location.href = `gallery.html?category=${craft.shape}`;
+}
+
 function showCraft(index) {
   activeIndex = (index + crafts.length) % crafts.length;
 
@@ -363,15 +368,10 @@ tabs.forEach((tab) => {
   });
 });
 
-// Gallery cards.
+// Gallery pictures: clicking one opens that craft's gallery page.
 galleryCards.forEach((card) => {
   card.addEventListener("click", () => {
-    showCraft(Number(card.dataset.index));
-
-    document.querySelector(".hero").scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    openGallery(crafts[Number(card.dataset.index)]);
   });
 });
 
@@ -389,12 +389,22 @@ document.getElementById("replay").addEventListener("click", () => {
   restartAnimation(crafts[activeIndex]);
 });
 
-// Explore button.
+// Explore button: opens the gallery page for the craft on screen.
 exploreButton.addEventListener("click", () => {
-  document.getElementById("crafts").scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  openGallery(crafts[activeIndex]);
+});
+
+// Clicking the big picture does the same (mouse, or Enter on the keyboard).
+artwork.setAttribute("role", "link");
+artwork.setAttribute("tabindex", "0");
+artwork.title = "Click to explore this craft";
+
+artwork.addEventListener("click", () => {
+  openGallery(crafts[activeIndex]);
+});
+
+artwork.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") openGallery(crafts[activeIndex]);
 });
 
 // Start on textiles so the falling-drape animation plays first.
