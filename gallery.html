@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RangManch | Art Gallery</title>
+  <link rel="stylesheet" href="gallery.css">
+  <script src="gallery.js" defer></script>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="flower">✿</span> RangManch.</a>
+    <a class="back-button" href="index.html#crafts">← Back to Categories</a>
+  </header>
+
+  <main>
+    <!-- Heading (filled in by gallery.js from the chosen category) -->
+    <section class="gallery-heading">
+      <p class="eyebrow">HANDMADE WITH LOVE · ROOTED IN INDIA</p>
+      <div class="ornament" aria-hidden="true">✦ ───────── ❋ ───────── ✦</div>
+      <h1 id="category-title">Discover Indian Art</h1>
+      <p id="category-description">
+        Explore beautiful creations made by talented artisans.
+      </p>
+      <div class="ornament bottom-ornament" aria-hidden="true">❋ ✦ ❋</div>
+    </section>
+
+    <section class="gallery-content">
+      <!-- Search, artists and sorting -->
+      <div class="controls">
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input
+            type="search"
+            id="search-input"
+            placeholder="Search artworks or artist names..."
+            aria-label="Search artworks or artist names"
+          >
+        </label>
+
+        <div class="artists-option-row">
+          <button
+            type="button"
+            id="artists-button"
+            class="artists-button"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span aria-hidden="true">♙</span>
+            <span id="artists-label">All artists</span>
+            <span aria-hidden="true">⌄</span>
+          </button>
+
+          <div id="artists-menu" class="artists-menu" hidden></div>
+        </div>
+
+        <label class="sort-box">
+          <span class="visually-hidden">Sort artwork</span>
+          <select id="sort-select">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="name">Artwork Name</option>
+          </select>
+        </label>
+      </div>
+
+      <p id="results-count" class="results-count" aria-live="polite">
+        Discover unique creations
+      </p>
+
+      <div id="artwork-grid" class="artwork-grid"></div>
+
+      <div id="empty-state" class="empty-state" hidden>
+        <span aria-hidden="true">❋</span>
+        <h2>No artworks found</h2>
+        <p>Try another search or explore a different keyword.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>RangManch - A stage for art</span>
+    <span>Made with ❤️ for India's artisans</span>
+  </footer>
+
+  <!-- "Interested?" pop-up -->
+  <dialog id="buy-dialog" class="buy-dialog">
+    <button id="close-dialog" class="close-dialog" aria-label="Close">×</button>
+    <p class="eyebrow">A TREASURE FROM RANGMANCH</p>
+    <h2>Interested in this artwork?</h2>
+    <p id="buy-message"></p>
+    <p class="demo-note">
+      This is a demo. No payment will be taken.
+    </p>
+    <button id="confirm-buy" class="buy-button">Confirm Interest</button>
+  </dialog>
+</body>
+</html>
