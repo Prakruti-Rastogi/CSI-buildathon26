@@ -47,6 +47,22 @@ const crafts = [
 
 let activeIndex = 1;
 
+// If an image file is missing, show a simple placeholder instead of a broken icon.
+const placeholder =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">' +
+    '<rect width="400" height="400" rx="24" fill="#58212a"/>' +
+    '<text x="200" y="210" font-size="26" text-anchor="middle" ' +
+    'fill="#f7e6d4" font-family="Georgia">Image coming soon</text></svg>'
+  );
+
+document.querySelectorAll("img").forEach((img) => {
+  img.addEventListener("error", () => {
+    if (img.src !== placeholder) img.src = placeholder;
+  });
+});
+
 const eyebrow = document.getElementById("eyebrow");
 const heading = document.getElementById("heading");
 const description = document.getElementById("description");
@@ -66,6 +82,9 @@ function restartAnimation(craft) {
   newImage.id = "hero-image";
   newImage.src = craft.image;
   newImage.alt = craft.alt;
+  newImage.addEventListener("error", () => {
+    newImage.src = placeholder;
+  });
 
   heroImage.replaceWith(newImage);
   heroImage = newImage;
