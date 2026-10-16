@@ -19,7 +19,7 @@ const crafts = [
     image: "images/blockprint.png",
     shape: "textile",
     button: "Explore Textiles",
-    alt: "Traditional Indian textile drape",
+    alt: "Traditional Indian textile making",
   },
   {
     category: "PAINTINGS",
@@ -30,7 +30,7 @@ const crafts = [
     image: "images/painting.png",
     shape: "painting",
     button: "Explore Paintings",
-    alt: "Krishna and Radha Indian folk-art painting",
+    alt: " Indian folk-art painting",
   },
   {
     category: "JEWELLERY",
